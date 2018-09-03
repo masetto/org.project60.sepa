@@ -391,6 +391,7 @@ function sepa_civicrm_navigationMenu(&$menu) {
   //add menu entry for SEPA Dashboard to Contributions menu
   $sepa_dashboard_url = 'civicrm/sepa';
 
+
   _sepa_civix_insert_navigation_menu($menu,'Contributions',array(
     'label' => ts('CiviSEPA Dashboard',array('domain' => 'org.project60.sepa')),
     'name' => 'Dashboard',

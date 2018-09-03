@@ -7,7 +7,7 @@
   <add>4.3</add> 
   <log>true</log> 
   <field>  
-    <name>id</name>  
+    <name>id</name>
     <type>int unsigned</type>  
     <required>true</required>  
     <comment>ID</comment>  

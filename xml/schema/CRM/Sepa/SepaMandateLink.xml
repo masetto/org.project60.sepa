@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<table>
+  <base>CRM/Sepa</base>
+  <class>SepaMandateLink</class>
+  <name>civicrm_sdd_entity_mandate</name>
+  <comment>Links SEPA Mandates to other entities</comment>
+  <log>true</log>
+
+  <field>
+    <name>id</name>
+    <type>int unsigned</type>
+    <required>true</required>
+    <comment>Unique SepaMandateLink ID</comment>
+  </field>
+  <primaryKey>
+    <name>id</name>
+    <autoincrement>true</autoincrement>
+  </primaryKey>
+
+  <field>
+    <name>mandate_id</name>
+    <title>SepaMandate ID</title>
+    <type>int unsigned</type>
+    <comment>FK to SepaMandate ID</comment>
+  </field>
+  <foreignKey>
+    <name>mandate_id</name>
+    <table>civicrm_sdd_mandate</table>
+    <key>id</key>
+    <onDelete>CASCADE</onDelete>
+  </foreignKey>
+
+  <field>
+    <name>entity_table</name>
+    <type>varchar</type>
+    <title>Entity Table</title>
+    <length>64</length>
+    <comment>Physical table name for entity being linked, eg civicrm_membership</comment>
+  </field>
+
+  <field>
+    <name>entity_id</name>
+    <type>int unsigned</type>
+    <title>Entity ID</title>
+    <required>true</required>
+    <comment>FK to entity table specified in entity_table column</comment>
+  </field>
+  <dynamicForeignKey>
+    <idColumn>entity_id</idColumn>
+    <typeColumn>entity_table</typeColumn>
+  </dynamicForeignKey>
+  <index>
+    <name>index_entity</name>
+    <fieldName>entity_table</fieldName>
+    <fieldName>entity_id</fieldName>
+  </index>
+
+  <field>
+    <name>class</name>
+    <type>varchar</type>
+    <title>Entity Table</title>
+    <length>16</length>
+    <comment>Link class, freely defined by client</comment>
+  </field>
+  <index>
+    <name>class</name>
+    <fieldName>class</fieldName>
+  </index>
+
+  <field>
+    <name>class</name>
+    <type>varchar</type>
+    <title>Entity Table</title>
+    <length>16</length>
+    <comment>Link class, freely defined by client</comment>
+  </field>
+  <index>
+    <name>class</name>
+    <fieldName>class</fieldName>
+  </index>
+
+  <field>
+    <name>is_active</name>
+    <type>boolean</type>
+    <comment>Is this link still active?</comment>
+  </field>
+  <index>
+    <name>is_active</name>
+    <fieldName>is_active</fieldName>
+  </index>
+
+  <field>
+    <name>creation_date</name>
+    <type>datetime</type>
+    <comment>Link creation date</comment>
+  </field>
+
+  <field>
+    <name>start_date</name>
+    <type>datetime</type>
+    <comment>Start date of the link (optional)</comment>
+  </field>
+  <index>
+    <name>start_date</name>
+    <fieldName>start_date</fieldName>
+  </index>
+
+  <field>
+    <name>end_date</name>
+    <type>datetime</type>
+    <comment>End date of the link (optional)</comment>
+  </field>
+  <index>
+    <name>end_date</name>
+    <fieldName>end_date</fieldName>
+  </index>
+
+</table>
