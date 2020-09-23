@@ -1367,7 +1367,7 @@ msgstr "SEPA-Mandtae ansehen"
 
 #: sepa.php
 msgid "Edit SEPA mandates"
-msgstr "SEPA-Mandate anlegen"
+msgstr "SEPA-Mandate bearbeiten"
 
 #: sepa.php
 msgid "Delete SEPA mandates"
